@@ -104,6 +104,67 @@ header{
   padding-right: 10px;
 }
 
+/* .sidebar .item{
+  width: 250px;
+  overflow: hidden;
+}
+
+.sidebar .item .menu-btn{
+  display: block;
+  color: #fff;
+  position: relative;
+  padding: 25px 20px;
+  transition: 0.3s;
+  transition-property: color;
+}
+
+.sidebar .item .menu-btn:hover{
+  color: lightblue;
+}
+
+.sidebar  .item .menu-btn i{
+  margin-right: 20px;
+}
+
+.sidebar .item .menu-btn .drop-down{
+  float: right;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.sidebar .item .sub-menu{
+    background: lightblue;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.3s;
+    transition-property: background, max-height;
+}
+
+.sidebar .item .sub-menu a{
+  display: block;
+  position: relative;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 15px;
+  padding: 20px;
+  border-bottom: 1px solid pink;
+  transition: 0.3s;
+  transition-property: background;
+}
+
+.sidebar .item .sub-menu a:hover{
+  background: pink;
+}
+
+.sidebar .item .sub-menu i{
+  padding-right: 20px;
+  font-size: 10px;
+}
+
+.sidebar .item:target .sub-menu{
+  max-height: 500px;
+} */
+
 label #sidebar_btn{
   z-index: 1;
   color: #fff;
@@ -165,13 +226,27 @@ label #sidebar_btn:hover{
 
 .card {
   background: #141414;
-  color: white;
+  /* color: white; */
   margin: 50px 20px;
+  margin-top: 0px!important;
 }
 .card-header {
-  margin-bottom: 0;
-  padding: 1.5rem 1.5rem;
+  /* margin-bottom: 0; */
+  padding: 0.25rem 2.0rem;
 }
+
+.card-header h3{
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.card-content {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 0.25rem 2.0rem;
+}
+
 
 .card .card-title {
   font-size: 1.12rem;
@@ -179,7 +254,128 @@ label #sidebar_btn:hover{
   letter-spacing: 0.05rem;
 }
 
+.title {
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+}
 
+
+.content-header-title h3{
+  margin-left: 20px;
+  color: white;
+  font-size: 22px;
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 0px;
+  margin-left: 20px!important;
+  list-style: none;
+  background-color: #1f1f1f;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 15px;
+  color: #6B6F82;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: #6B6F82;
+  content: "-";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: lightblue;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: pink;
+  text-decoration: underline;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.column1_btn {
+  flex: 50%;
+  margin-right: 10px;
+}
+
+.column2_btn {
+  flex: 50%;
+  float: left;
+  margin-left: 10px;
+}
+
+.column1 {
+  flex: 48%;
+  margin-right: 4%;
+}
+
+.column2 {
+  flex: 48%;
+}
+
+.add-btn{
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+.add_button{
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #28d094;
+  color: white;
+  padding: 15px;
+}
+
+.add_button_link{
+  color: white;
+  text-decoration: none;
+}
+
+.back_button{
+  width: 8.5rem;
+  float: right;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #FF9149;
+  color: white;
+  padding: 15px;
+}
+
+.back_button_link{
+  color: white;
+  text-decoration: none;
+}
+
+.submit_button{
+  width: 8.5rem;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #28d094;
+  color: white;
+  padding: 15px;
+}
+
+.foot_margin {
+  margin-bottom: 100px;
+}
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){

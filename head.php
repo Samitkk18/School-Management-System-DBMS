@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMS-DBMS</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
@@ -33,7 +35,7 @@
       </div>
       <div class="mobile_nav_items">
         <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-        <a href="#"><i class="fas fa-cogs"></i><span>Manage Students</span></a>
+        <a href="#"><i class="fas fa-users"></i><span>Manage Students</span></a>
         <a href="#"><i class="fas fa-table"></i><span>Manage Teachers</span></a>
         <a href="#"><i class="fas fa-th"></i><span>Manage Parents</span></a>
         <a href="#"><i class="fas fa-info-circle"></i><span>Attendance</span></a>
@@ -51,7 +53,7 @@
           <!-- <img src="1.png" class="profile_image" alt=""> -->
           <!-- <h4>Samit</h4> -->
         </div>
-        <li class="item">
+        <!-- <li class="item">
           <a href="#" class="menu-btn">
             <i class="fas fa-desktop"></i><span>Dashboard</span>
           </a>
@@ -131,21 +133,20 @@
             <a href="#"><i class="fas fa-cogs"></i><span>Add Class</span></a>
             <a href="#"><i class="fas fa-cogs"></i><span>All Classes</span></a>
           </div>
-        </li>
-
-        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-        <a href="#"><i class="fas fa-cogs"></i><span>Manage Students</span></a>
-        <a href="#"><i class="fas fa-table"></i><span>Manage Teachers</span></a>
-        <a href="#"><i class="fas fa-th"></i><span>Manage Parents</span></a>
-        <a href="#"><i class="fas fa-info-circle"></i><span>Attendance</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Assignment</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Library</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Classes</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Subjects</span></a>
+        </li> -->
+        <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+        <a href="student.php"><i class="fas fa-graduation-cap"></i><span>Manage Students</span></a>
+        <a href="teacher.php"><i class="fas fa-users"></i><span>Manage Teachers</span></a>
+        <a href="parent.php"><i class="fas fa-user-secret"></i><span>Manage Parents</span></a>
+        <a href="#"><i class="fas fa-list"></i><span>Attendance</span></a>
+        <a href="#"><i class="fas fa-coffee"></i><span>Assignment</span></a>
+        <a href="#"><i class="fas fa-book"></i><span>Library</span></a>
+        <a href="#"><i class="fas fa-desktop"></i><span>Classes</span></a>
+        <a href="#"><i class="fas fa-file"></i><span>Subjects</span></a>
     </div>
     <!--sidebar end-->
 
-    <div class="content">
+    <!-- <div class="content">
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Dashboard</h4>
@@ -163,4 +164,4 @@
     </script>
 
   </body>
-</html>
+</html> -->

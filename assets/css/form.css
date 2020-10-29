@@ -1,0 +1,40 @@
+.label {
+  color: #AFAFAF!important;
+}
+
+
+.form-control {
+  margin: 10px 0px 0px;
+  margin-bottom: 20px;
+  padding: 10.5px 14px;
+  background-color: #292929;
+  border: 1px solid #383737;
+  color: white;
+  width: 95%;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  padding: 0.75rem 1rem;
+  background-clip: padding-box;
+  overflow: visible;
+  text-align: start;
+}
+
+
+
+textarea {
+  margin: 10px 0px 0px;
+  margin-bottom: 20px;
+  padding: 10.5px 14px;
+  background-color: #292929;
+  border: 1px solid #383737;
+  color: white;
+  width: 95%;
+  font-size: 1rem;
+  line-height: 1.25;
+  display: block;
+  padding: 0.75rem 1rem;
+  background-clip: padding-box;
+  overflow: visible;
+  text-align: start;
+}
