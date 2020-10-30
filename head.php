@@ -22,7 +22,10 @@
         <h3>School <span>Name</span></h3>
       </div>
       <div class="right_area">
-        <a href="#" class="logout_btn">Logout</a>
+        <form action="includes/logout.inc.php" method="POST">
+            <button type="submit" name="logout-submit" class="logout_btn">Logout</button>
+        </form>
+
       </div>
     </header>
     <!--header area end-->

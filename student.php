@@ -1,7 +1,14 @@
 <?php
+  require_once "session.php";
+  require 'includes/dbh.inc.php';
+?>
+<?php if(!$_SESSION['userId']): ?>
+   <?php header("Location: index.php") ?>
+<?php else: ?>
+<?php
     require_once "head.php"
  ?>
-
+<!-- Write Code for Student Page Dont Touch anything else -->
  <div class="content">
    <div class="row">
      <div class="column">
@@ -21,7 +28,7 @@
    </div>
    <div class="card">
      <div class="card-header">
-        <h3>Add Student</h3>
+        <h3>Students List</h3>
      </div>
      <div class="card-content">
        <!-- Code For Table -->
@@ -32,3 +39,4 @@
 <?php
      require_once "foot.php"
 ?>
+<?php endif; ?>
