@@ -52,7 +52,7 @@
          <div class="row">
            <div class="column1">
              <label for="subject" class="label">Subject:</label><br>
-             <input type="text" name="subject" class="form-control" value="" placeholder="Select Subjectß">
+             <input type="text" name="subject" class="form-control" value="" placeholder="Select Subject">
            </div>
            <div class="column2">
              <label for="date_of_sub" class="label">Date of Submission:</label><br>
