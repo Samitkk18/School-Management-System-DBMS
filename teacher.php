@@ -22,13 +22,13 @@
      </div>
      <div class="column">
        <div class="add-btn">
-         <button type="button" name="add_teacher" class="add_button">ADD TEACHER</button>
+         <button type="button" name="add_teacher" class="add_button"><a href="add_teacher.php" class="add_button_link">ADD TEACHER</a></button>
        </div>
      </div>
    </div>
    <div class="card">
      <div class="card-header">
-
+       
      </div>
    </div>
  </div>

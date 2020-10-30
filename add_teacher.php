@@ -8,27 +8,29 @@
 <?php
     require_once "head.php"
  ?>
-<!-- Change code for add_student page from here dont touch anything else -->
+
+ <!-- Change code for add_teacher page from here dont touch anything else -->
+
  <div class="content">
    <div class="row">
      <div class="column">
        <div class="content-header-title">
-          <h3>Add Student</h3>
+          <h3>Add Teacher</h3>
           <ul class="breadcrumb">
             <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="student.php">Students List</a></li>
-            <li>Add Student</li>
+            <li><a href="teacher.php">Teachers List</a></li>
+            <li>Add Teacher</li>
           </ul>
        </div>
      </div>
    </div>
-   <form id="student_form" action="action_add_student.php" method="POST">
+   <form id="parent" action="action_add_teacher.php" method="POST">
      <div class="card">
        <div class="card-header">
-          <!-- <h3>Add Student</h3> -->
+          <!-- <h3>Add Teacher</h3> -->
        </div>
        <div class="card-content">
-         <!-- Code For Add Student Form -->
+         <!-- Code For Add Teacher Form -->
          <div class="row">
            <div class="column1">
              <label for="f_name" class="label">First Name:</label><br>
@@ -37,26 +39,6 @@
            <div class="column2">
              <label for="l_name" class="label">Last Name:</label><br>
              <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name">
-           </div>
-         </div>
-         <div class="row">
-           <div class="column1">
-             <label for="mother_name" class="label">Mother's Name:</label><br>
-             <input type="text" name="mother_name" class="form-control" value="" placeholder="Enter Mother's Name">
-           </div>
-           <div class="column2">
-             <label for="father_name" class="label">Father's Name:</label><br>
-             <input type="text" name="father_name" class="form-control" value="" placeholder="Enter Father's Name">
-           </div>
-         </div>
-         <div class="row">
-           <div class="column1">
-             <label for="mother_occ" class="label">Mother's Occupation:</label><br>
-             <input type="text" name="mother_occ" class="form-control" value="" placeholder="Enter Mother's Occupation">
-           </div>
-           <div class="column2">
-             <label for="father_occ" class="label">Father's Occupation:</label><br>
-             <input type="text" name="father_occ" class="form-control" value="" placeholder="Enter Father's Occupation">
            </div>
          </div>
          <div class="row">
@@ -71,16 +53,6 @@
          </div>
          <div class="row">
            <div class="column1">
-             <label for="e_mobile" class="label">Person To Contact In Case Of Emergency:</label><br>
-             <input type="text" name="e_mobile" class="form-control" value="" placeholder="Enter Emergency Number">
-           </div>
-           <div class="column2">
-             <label for="l_name" class="label">Last Name:</label><br>
-             <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name">
-           </div>
-         </div>
-         <div class="row">
-           <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
              <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth">
            </div>
@@ -90,11 +62,10 @@
            </div>
          </div>
          <div class="row">
-           <div>
-             <label for="address" class="label">Permanent Address:</label><br>
-             <textarea name="address" rows="5" cols="68" placeholder="Enter Permanent Address"></textarea>
-             <!-- <input type="text" name="e_mobile" class="form-control" value="" placeholder="Enter Emergency Number"> -->
-           </div>
+          <div>
+            <label for="address" class="label">Permanent Address:</label><br>
+            <textarea name="address" rows="5" cols="68" placeholder="Enter Permanent Address"></textarea>
+          </div>
          </div>
          <div class="row">
            <div class="column1">
@@ -132,25 +103,19 @@
              <input type="text" name="prescription" class="form-control" value="" placeholder="Enter Prescribed Medicines(If Any)">
            </div>
            <div class="column2">
-              <label for="prev_school" class="label">Previous School:</label><br>
-             <input type="text" name="prev_school" class="form-control" value="" placeholder="Enter Previous School Name(If Applicable)">
+              <label for="prev_job" class="label">Previous Job:</label><br>
+             <input type="text" name="prev_job" class="form-control" value="" placeholder="Enter Previous Job Details(If Applicable)">
            </div>
          </div>
        </div>
      </div>
-     <div class="row foot_margin">
-       <div class="column1_btn">
-         <button type="button" name="back" class="back_button"><a href="student.php" class="back_button_link">BACK</a></button>
-       </div>
-       <div class="column2_btn">
-         <input type="submit" class="submit_button" value="SUBMIT">
-       </div>
+
      </div>
    </form>
  </div>
 
-<?php
-     require_once "foot.php"
-?>
+ <?php
+      require_once "foot.php"
+ ?>
 
-<?php endif; ?>
+ <?php endif; ?>

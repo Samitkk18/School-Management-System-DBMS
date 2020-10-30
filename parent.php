@@ -22,7 +22,7 @@
      </div>
      <div class="column">
        <div class="add-btn">
-         <button type="button" name="add_parent" class="add_button">ADD PARENTS</button>
+         <button type="button" name="add_parent" class="add_button"><a href="add_parent.php" class="add_button_link">ADD PARENTS</a></button>
        </div>
      </div>
    </div>

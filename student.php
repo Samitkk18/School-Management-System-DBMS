@@ -6,7 +6,7 @@
    <?php header("Location: index.php") ?>
 <?php else: ?>
 <?php
-    require_once "head.php"
+    require_once "head.php";
  ?>
 <!-- Write Code for Student Page Dont Touch anything else -->
  <div class="content">
