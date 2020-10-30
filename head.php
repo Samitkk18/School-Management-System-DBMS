@@ -142,10 +142,12 @@
         <a href="teacher.php"><i class="fas fa-users"></i><span>Manage Teachers</span></a>
         <a href="parent.php"><i class="fas fa-user-secret"></i><span>Manage Parents</span></a>
         <a href="#"><i class="fas fa-list"></i><span>Attendance</span></a>
-        <a href="#"><i class="fas fa-coffee"></i><span>Assignment</span></a>
+        <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
         <a href="#"><i class="fas fa-book"></i><span>Library</span></a>
         <a href="#"><i class="fas fa-desktop"></i><span>Classes</span></a>
         <a href="#"><i class="fas fa-file"></i><span>Subjects</span></a>
+        <a href="timetable.php"><i class="fas fa-file"></i><span>Time Table</span></a>
+
     </div>
     <!--sidebar end-->
 

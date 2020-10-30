@@ -6,7 +6,7 @@
    <?php header("Location: index.php") ?>
 <?php else: ?>
 <?php
-    require_once "head.php"
+    require_once "head.php";
  ?>
 
  <!-- Change code for add_teacher page from here dont touch anything else -->
@@ -109,10 +109,16 @@
          </div>
        </div>
      </div>
-
+     <div class="row foot_margin">
+       <div class="column1_btn">
+         <button type="button" name="back" class="back_button"><a href="teacher.php" class="back_button_link">BACK</a></button>
+       </div>
+       <div class="column2_btn">
+         <input type="submit" class="submit_button" value="SUBMIT">
+       </div>
      </div>
    </form>
- </div>
+</div>
 
  <?php
       require_once "foot.php"
