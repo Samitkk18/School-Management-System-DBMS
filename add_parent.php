@@ -67,6 +67,7 @@
              <input type="text" name="student_name" class="form-control" value="" placeholder="Enter Students Name">
            </div>
            <div class="column2">
+             <!-- student id -->
              <!-- <label for="l_name" class="label">Last Name:</label><br>
              <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name"> -->
            </div>

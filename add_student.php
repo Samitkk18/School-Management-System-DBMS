@@ -136,6 +136,7 @@
              <input type="text" name="prev_school" class="form-control" value="" placeholder="Enter Previous School Name(If Applicable)">
            </div>
          </div>
+         <!-- Add std and div both dropdowns -->
        </div>
      </div>
      <div class="row foot_margin">

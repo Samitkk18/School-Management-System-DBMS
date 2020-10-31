@@ -41,12 +41,12 @@
          </div>
          <div class="row">
            <div class="column1">
-             <label for="course" class="label">Course:</label><br>
-             <input type="text" name="course" class="form-control" value="" placeholder="Select Course">
+             <label for="standard" class="label">Standard:</label><br>
+             <input type="text" name="standard" class="form-control" value="" placeholder="Select Course">
            </div>
            <div class="column2">
-             <label for="batch" class="label">Batch:</label><br>
-             <input type="text" name="batch" class="form-control" value="" placeholder="Select Batch">
+             <label for="division" class="label">Division:</label><br>
+             <input type="text" name="division" class="form-control" value="" placeholder="Select Batch">
            </div>
          </div>
          <div class="row">

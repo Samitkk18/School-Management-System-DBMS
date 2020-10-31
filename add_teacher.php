@@ -107,6 +107,7 @@
              <input type="text" name="prev_job" class="form-control" value="" placeholder="Enter Previous Job Details(If Applicable)">
            </div>
          </div>
+         <!-- Add salary and department -->
        </div>
      </div>
      <div class="row foot_margin">
