@@ -25,64 +25,43 @@
    <form id="student_form" action="action_add_student.php" method="POST">
      <div class="card">
        <div class="card-header">
-          <!-- <h3>Add Student</h3> -->
+          <h3>Student Information</h3>
        </div>
        <div class="card-content">
-         <!-- Code For Add Student Form -->
          <div class="row">
            <div class="column1">
              <label for="f_name" class="label">First Name:</label><br>
-             <input type="text" name="f_name" class="form-control" value="" placeholder="Enter First Name">
+             <input type="text" name="f_name" class="form-control" value="" placeholder="Enter First Name" required>
            </div>
            <div class="column2">
              <label for="l_name" class="label">Last Name:</label><br>
-             <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name">
-           </div>
-         </div>
-         <div class="row">
-           <div class="column1">
-             <label for="mother_name" class="label">Mother's Name:</label><br>
-             <input type="text" name="mother_name" class="form-control" value="" placeholder="Enter Mother's Name">
-           </div>
-           <div class="column2">
-             <label for="father_name" class="label">Father's Name:</label><br>
-             <input type="text" name="father_name" class="form-control" value="" placeholder="Enter Father's Name">
-           </div>
-         </div>
-         <div class="row">
-           <div class="column1">
-             <label for="mother_occ" class="label">Mother's Occupation:</label><br>
-             <input type="text" name="mother_occ" class="form-control" value="" placeholder="Enter Mother's Occupation">
-           </div>
-           <div class="column2">
-             <label for="father_occ" class="label">Father's Occupation:</label><br>
-             <input type="text" name="father_occ" class="form-control" value="" placeholder="Enter Father's Occupation">
+             <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name" required>
            </div>
          </div>
          <div class="row">
            <div class="column1">
              <label for="email" class="label">Email ID:</label><br>
-             <input type="email" name="email" class="form-control" value="" placeholder="Enter Email address">
+             <input type="email" name="email" class="form-control" value="" placeholder="Enter Email address" required>
            </div>
            <div class="column2">
              <label for="mobile" class="label">Mobile Number:</label><br>
-             <input type="text" name="mobile" class="form-control" value="" placeholder="Enter Mobile Number">
+             <input type="text" name="mobile" class="form-control" value="" placeholder="Enter Mobile Number" required>
            </div>
          </div>
          <div class="row">
            <div class="column1">
-             <label for="e_mobile" class="label">Person To Contact In Case Of Emergency:</label><br>
-             <input type="text" name="e_mobile" class="form-control" value="" placeholder="Enter Emergency Number">
+             <label for="emergency" class="label">Person To Contact In Case Of Emergency:</label><br>
+             <input type="text" name="emergency" class="form-control" value="" placeholder="Enter Name" required>
            </div>
            <div class="column2">
-             <label for="l_name" class="label">Last Name:</label><br>
-             <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name">
+             <label for="emergency_contact" class="label">Emergency Contact:</label><br>
+             <input type="text" name="emergency_contact" class="form-control" value="" placeholder="Enter Emergency Contact" required>
            </div>
          </div>
          <div class="row">
            <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
-             <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth">
+             <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth" required>
            </div>
            <div class="column2">
               <label for="gender" class="label">Gender:</label><br>
@@ -92,34 +71,34 @@
          <div class="row">
            <div>
              <label for="address" class="label">Permanent Address:</label><br>
-             <textarea name="address" rows="5" cols="68" placeholder="Enter Permanent Address"></textarea>
+             <textarea name="address" rows="5" cols="68" placeholder="Enter Permanent Address" required></textarea>
              <!-- <input type="text" name="e_mobile" class="form-control" value="" placeholder="Enter Emergency Number"> -->
            </div>
          </div>
          <div class="row">
            <div class="column1">
              <label for="city" class="label">City:</label><br>
-             <input type="text" name="city" class="form-control" value="" placeholder="City Name">
+             <input type="text" name="city" class="form-control" value="" placeholder="City Name" required>
            </div>
            <div class="column2">
               <label for="state" class="label">State:</label><br>
-             <input type="text" name="state" class="form-control" value="" placeholder="Enter State Name">
+             <input type="text" name="state" class="form-control" value="" placeholder="Enter State Name" required>
            </div>
          </div>
          <div class="row">
            <div class="column1">
              <label for="pincode" class="label">Pincode:</label><br>
-             <input type="text" name="pincode" class="form-control" value="" placeholder="Enter Pincode">
+             <input type="text" name="pincode" class="form-control" value="" placeholder="Enter Pincode" required>
            </div>
            <div class="column2">
               <label for="country" class="label">Counrty:</label><br>
-             <input type="text" name="country" class="form-control" value="" placeholder="Enter Country Name">
+             <input type="text" name="country" class="form-control" value="" placeholder="Enter Country Name" required>
            </div>
          </div>
          <div class="row">
            <div class="column1">
              <label for="bloodgroup" class="label">Blood Group:</label><br>
-             <input type="text" name="bloodgroup" class="form-control" value="" placeholder="Enter Blood Group">
+             <input type="text" name="bloodgroup" class="form-control" value="" placeholder="Enter Blood Group" required>
            </div>
            <div class="column2">
               <label for="allergies" class="label">Allergies:</label><br>
@@ -137,6 +116,62 @@
            </div>
          </div>
          <!-- Add std and div both dropdowns -->
+         <div class="row">
+           <div class="column1">
+             <label for="standard" class="label">Standard:</label><br>
+             <input type="text" name="standard" class="form-control" value="" placeholder="Enter Standard" required>
+           </div>
+           <div class="column2">
+              <label for="division" class="label">Division:</label><br>
+             <input type="text" name="division" class="form-control" value="" placeholder="Enter Division" required>
+           </div>
+         </div>
+       </div>
+       <div class="card-header">
+          <h3>Parent Information</h3>
+       </div>
+       <div class="card-content">
+         <!-- Code For Add Student Form -->
+         <div class="row">
+           <div class="column1">
+             <label for="mother_name" class="label">Mother's Name:</label><br>
+             <input type="text" name="mother_name" class="form-control" value="" placeholder="Enter Mother's Name" required>
+           </div>
+           <div class="column2">
+             <label for="father_name" class="label">Father's Name:</label><br>
+             <input type="text" name="father_name" class="form-control" value="" placeholder="Enter Father's Name" required>
+           </div>
+         </div>
+         <div class="row">
+           <div class="column1">
+             <label for="m_email" class="label">Mother's Email ID:</label><br>
+             <input type="email" name="m_email" class="form-control" value="" placeholder="Enter Mother's Email address" required>
+           </div>
+           <div class="column2">
+             <label for="m_mobile" class="label">Mother's Mobile Number:</label><br>
+             <input type="text" name="m_mobile" class="form-control" value="" placeholder="Enter Mother's Mobile Number" required>
+           </div>
+         </div>
+         <div class="row">
+           <div class="column1">
+             <label for="f_email" class="label">Father's Email ID:</label><br>
+             <input type="email" name="f_email" class="form-control" value="" placeholder="Enter Father's Email address" required>
+           </div>
+           <div class="column2">
+             <label for="f_mobile" class="label">Father's Mobile Number:</label><br>
+             <input type="text" name="f_mobile" class="form-control" value="" placeholder="Enter Father's Mobile Number" required>
+           </div>
+         </div>
+         <div class="row">
+           <div class="column1">
+             <label for="mother_occ" class="label">Mother's Occupation:</label><br>
+             <input type="text" name="mother_occ" class="form-control" value="" placeholder="Enter Mother's Occupation" required>
+           </div>
+           <div class="column2">
+             <label for="father_occ" class="label">Father's Occupation:</label><br>
+             <input type="text" name="father_occ" class="form-control" value="" placeholder="Enter Father's Occupation" required>
+           </div>
+         </div>
        </div>
      </div>
      <div class="row foot_margin">
@@ -144,7 +179,7 @@
          <button type="button" name="back" class="back_button"><a href="student.php" class="back_button_link">BACK</a></button>
        </div>
        <div class="column2_btn">
-         <input type="submit" class="submit_button" value="SUBMIT">
+         <input type="submit" name="student_add" class="submit_button" value="SUBMIT">
        </div>
      </div>
    </form>
