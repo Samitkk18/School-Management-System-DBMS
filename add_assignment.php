@@ -42,11 +42,11 @@
          <div class="row">
            <div class="column1">
              <label for="standard" class="label">Standard:</label><br>
-             <input type="text" name="standard" class="form-control" value="" placeholder="Select Course">
+             <input type="text" name="standard" class="form-control" value="" placeholder="Select Standard">
            </div>
            <div class="column2">
              <label for="division" class="label">Division:</label><br>
-             <input type="text" name="division" class="form-control" value="" placeholder="Select Batch">
+             <input type="text" name="division" class="form-control" value="" placeholder="Select Division">
            </div>
          </div>
          <div class="row">
@@ -66,7 +66,7 @@
          <button type="button" name="back" class="back_button"><a href="assignment.php" class="back_button_link">BACK</a></button>
        </div>
        <div class="column2_btn">
-         <input type="submit" class="submit_button" value="SUBMIT">
+         <input type="submit" name="assignment_add" class="submit_button" value="SUBMIT">
        </div>
      </div>
    </form>
