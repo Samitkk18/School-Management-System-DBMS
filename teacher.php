@@ -28,7 +28,76 @@
    </div>
    <div class="card">
      <div class="card-header">
-       
+        <h3>Teachers List</h3>
+     </div>
+     <div class="card-content">
+       <!-- Code For Table -->
+       <div style="overflow-x:auto;">
+         <input id="myInput" type="text" name="search" class="form-control"  placeholder="Search..">
+         <table class="style1">
+           <thead>
+             <tr>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+               <th>Points</th>
+             </tr>
+           </thead>
+           <tbody id="myTable">
+             <tr>
+               <td>Jill</td>
+               <td>Smith</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+               <td>50</td>
+             </tr>
+             <tr>
+               <td>Eve</td>
+               <td>Jackson</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+               <td>94</td>
+             </tr>
+             <tr>
+               <td>Adam</td>
+               <td>Johnson</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+               <td>67</td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+       <!-- end for table code -->
      </div>
    </div>
  </div>
