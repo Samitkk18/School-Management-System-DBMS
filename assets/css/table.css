@@ -18,7 +18,18 @@ thead {
   background-color: lightblue;
 
 }
- thead tr{
-   height: 50px;
-   font-weight: 500;
- }
+
+
+tr.title th{
+  height: 50px;
+  font-weight: 600!important;
+}
+tr.data ,th{
+  font-weight: 100;
+}
+
+.table-data{
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}

@@ -36,64 +36,57 @@
          <input id="myInput" type="text" name="search" class="form-control"  placeholder="Search..">
          <table class="style1">
            <thead>
-             <tr>
-               <th>First Name</th>
-               <th>Last Name</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
+             <tr class="title">
+               <th>Sr No.</th>
+               <th>Title</th>
+               <th>Description</th>
+               <th>Standard</th>
+               <th>Division</th>
+               <th>Subject</th>
+               <th>Date of Submission</th>
+               <th>Assigned By</th>
+               <th>Action</th>
              </tr>
            </thead>
            <tbody id="myTable">
-             <tr>
-               <td>Jill</td>
-               <td>Smith</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-             </tr>
-             <tr>
-               <td>Eve</td>
-               <td>Jackson</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-             </tr>
-             <tr>
-               <td>Adam</td>
-               <td>Johnson</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-             </tr>
+             <?php
+             $name_of = $_SESSION['userUid'];
+              $sql = "SELECT * FROM assignments";
+              $result = mysqli_query($conn, $sql)or die('Error');
+              if(mysqli_num_rows($result)>0){
+                while($assignments = mysqli_fetch_assoc($result)){
+                  $id = $assignments['assignment_id'];
+                  $title = $assignments['a_title'];
+                  $description = $assignments['a_description'];
+                  $standard = $assignments['a_standard'];
+                  $division = $assignments['a_division'];
+                  $subject = $assignments['a_subject'];
+                  $date = $assignments['a_date_of_sub'];
+                  $assigned_by = $assignments['added_by'];
+                  $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
+                  $result2 = mysqli_query($conn, $sql2)or die('Error');
+                  if(mysqli_num_rows($result2)>0){
+                    while($name = mysqli_fetch_assoc($result2)){
+                      $assigned_by_name = $name['uidUsers'];
+
+              ?>
+                <tr class="data">
+                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $title; ?></td>
+                  <td><?php echo  $description; ?></td>
+                  <td><?php echo  $standard; ?></td>
+                  <td><?php echo  $division; ?></td>
+                  <td><?php echo  $subject; ?></td>
+                  <td><?php echo  $date; ?></td>
+                  <td><?php echo  $assigned_by_name; ?></td>
+                  <td><a href="action_edit_assignment.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_assignment.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
+                </tr>
+              <?php
+                    }
+                  }
+                }
+              }
+              ?>
            </tbody>
          </table>
        </div>
