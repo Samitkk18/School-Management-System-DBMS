@@ -464,3 +464,11 @@ ul.breadcrumb li a:hover {
     display: block;
   }
 }
+
+.table.tkp-table .badge{
+      border-radius: 0;
+}
+.table.tkp-table thead tr{
+  background-color: #32cafe;
+  color:#fff;
+}
