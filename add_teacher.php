@@ -29,7 +29,7 @@
        <div class="card-header">
           <!-- <h3>Add Teacher</h3> -->
        </div>
-       <div class="card-content">
+       <div class="card-content margin">
          <!-- Code For Add Teacher Form -->
          <div class="row">
            <div class="column1">

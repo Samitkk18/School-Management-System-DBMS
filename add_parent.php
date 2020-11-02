@@ -28,7 +28,7 @@
        <div class="card-header">
           <!-- <h3>Add Student</h3> -->
        </div>
-       <div class="card-content">
+       <div class="card-content margin">
          <!-- Code For Add Student Form -->
          <div class="row">
            <div class="column1">
@@ -68,8 +68,8 @@
            </div>
            <div class="column2">
              <!-- student id -->
-             <!-- <label for="l_name" class="label">Last Name:</label><br>
-             <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name"> -->
+             <label for="student_id" class="label">Student ID:</label><br>
+             <input type="text" name="student_id" class="form-control" value="" placeholder="Enter Student ID">
            </div>
          </div>
          <div class="row">
@@ -116,7 +116,7 @@
          <button type="button" name="back" class="back_button"><a href="parent.php" class="back_button_link">BACK</a></button>
        </div>
        <div class="column2_btn">
-         <input type="submit" class="submit_button" value="SUBMIT">
+         <input type="submit" name="parent_add" class="submit_button" value="SUBMIT">
        </div>
      </div>
    </form>

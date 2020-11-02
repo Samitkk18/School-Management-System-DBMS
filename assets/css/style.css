@@ -247,6 +247,10 @@ label #sidebar_btn:hover{
   padding: 0.25rem 2.0rem;
 }
 
+.margin {
+  margin-top: 40px;
+}
+
 
 .card .card-title {
   font-size: 1.12rem;
