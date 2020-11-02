@@ -53,6 +53,27 @@
          </div>
          <div class="row">
            <div class="column1">
+             <label for="emergency" class="label">Person To Contact In Case Of Emergency:</label><br>
+             <input type="text" name="emergency" class="form-control" value="" placeholder="Enter Name" required>
+           </div>
+           <div class="column2">
+             <label for="emergency_contact" class="label">Emergency Contact:</label><br>
+             <input type="text" name="emergency_contact" class="form-control" value="" placeholder="Enter Emergency Contact" required>
+           </div>
+         </div>
+         <!-- Add salary and department -->
+         <div class="row">
+           <div class="column1">
+             <label for="salary" class="label">Salary:</label><br>
+             <input type="text" name="salary" class="form-control" value="" placeholder="Enter Salary">
+           </div>
+           <div class="column2">
+              <label for="department" class="label">Department:</label><br>
+             <input type="text" name="department" class="form-control" value="" placeholder="Enter Department">
+           </div>
+         </div>
+         <div class="row">
+           <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
              <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth">
            </div>
@@ -107,7 +128,6 @@
              <input type="text" name="prev_job" class="form-control" value="" placeholder="Enter Previous Job Details(If Applicable)">
            </div>
          </div>
-         <!-- Add salary and department -->
        </div>
      </div>
      <div class="row foot_margin">
@@ -115,7 +135,7 @@
          <button type="button" name="back" class="back_button"><a href="teacher.php" class="back_button_link">BACK</a></button>
        </div>
        <div class="column2_btn">
-         <input type="submit" class="submit_button" value="SUBMIT">
+         <input type="submit" name="teacher_add" class="submit_button" value="SUBMIT">
        </div>
      </div>
    </form>
