@@ -36,64 +36,64 @@
          <input id="myInput" type="text" name="search" class="form-control"  placeholder="Search..">
          <table class="style1">
            <thead>
-             <tr>
-               <th>First Name</th>
-               <th>Last Name</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
-               <th>Points</th>
+             <tr class="title">
+               <th>Sr No.</th>
+               <th>SAP ID</th>
+               <th>Name</th>
+               <th>Salary</th>
+               <th>Department</th>
+               <th>Email</th>
+               <th>Mobile</th>
+               <th>Emergency Contact</th>
+               <th>Date of Admission</th>
+               <th>Assigned By</th>
+               <th>Action</th>
              </tr>
            </thead>
            <tbody id="myTable">
-             <tr>
-               <td>Jill</td>
-               <td>Smith</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-               <td>50</td>
-             </tr>
-             <tr>
-               <td>Eve</td>
-               <td>Jackson</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-               <td>94</td>
-             </tr>
-             <tr>
-               <td>Adam</td>
-               <td>Johnson</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-               <td>67</td>
-             </tr>
+             <?php
+             $name_of = $_SESSION['userUid'];
+              $sql = "SELECT * FROM teachers";
+              $result = mysqli_query($conn, $sql)or die('Error');
+              if(mysqli_num_rows($result)>0){
+                while($teacher = mysqli_fetch_assoc($result)){
+                  $id = $teacher['teacher_id'];
+                  $sapid = $teacher['teacher_sapid'];
+                  $first_name = $teacher['t_f_name'];
+                  $last_name = $teacher['t_l_name'];
+                  $email = $teacher['t_email'];
+                  $salary = $teacher['salary'];
+                  $department = $teacher['department'];
+                  $mobile = $teacher['t_mobile'];
+                  $emergency = $teacher['t_emergency_mobile'];
+                  $date = $teacher['added_on'];
+                  $assigned_by = $teacher['added_by'];
+                  $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
+                  $result2 = mysqli_query($conn, $sql2)or die('Error');
+                  if(mysqli_num_rows($result2)>0){
+                    while($name = mysqli_fetch_assoc($result2)){
+                      $assigned_by_name = $name['uidUsers'];
+
+              ?>
+                <tr class="data">
+                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $sapid; ?></td>
+                  <td><?php echo  $first_name." ".$last_name; ?></td>
+                  <td><?php echo  $salary; ?></td>
+                  <td><?php echo  $department; ?></td>
+                  <td><?php echo  $email; ?></td>
+                  <td><?php echo  $mobile; ?></td>
+                  <td><?php echo  $emergency; ?></td>
+                  <td><?php echo  $date; ?></td>
+                  <td><?php echo  $assigned_by_name; ?></td>
+                  <td><a href="action_edit_teacher.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_teacher.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
+                </tr>
+              <?php
+                    }
+                  }
+                }
+              }
+              ?>
            </tbody>
          </table>
        </div>

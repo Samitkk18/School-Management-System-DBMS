@@ -85,7 +85,7 @@
                   <td><?php echo  $mobile; ?></td>
                   <td><?php echo  $emergency; ?></td>
                   <td><?php echo  $date; ?></td>
-                  <td><?php echo  $assigned_by; ?></td>
+                  <td><?php echo  $assigned_by_name; ?></td>
                   <td><a href="action_edit_student.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_student.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
