@@ -54,7 +54,7 @@
         <a href="#"><i class="fas fa-info-circle"></i><span>Attendance</span></a>
         <a href="#"><i class="fas fa-sliders-h"></i><span>Assignment</span></a>
         <a href="#"><i class="fas fa-sliders-h"></i><span>Library</span></a>
-        <a href="#"><i class="fas fa-sliders-h"></i><span>Classes</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Course</span></a>
         <a href="#"><i class="fas fa-sliders-h"></i><span>Subjects</span></a>
       </div>
     </div>
@@ -154,8 +154,8 @@
         <a href="#"><i class="fas fa-list"></i><span>Attendance</span></a>
         <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
         <a href="library.php"><i class="fas fa-book"></i><span>Library</span></a>
-        <a href="#"><i class="fas fa-desktop"></i><span>Classes</span></a>
-        <a href="#"><i class="fas fa-file"></i><span>Subjects</span></a>
+        <a href="course.php"><i class="fas fa-desktop"></i><span>Course</span></a>
+        <a href="subject.php"><i class="fas fa-file"></i><span>Subjects</span></a>
         <a href="timetable.php"><i class="fas fa-file"></i><span>Time Table</span></a>
 
     </div>
