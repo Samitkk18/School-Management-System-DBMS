@@ -51,7 +51,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM assignments";
+              $sql = "SELECT * FROM assignments WHERE Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 while($assignments = mysqli_fetch_assoc($result)){
@@ -79,7 +79,7 @@
                   <td><?php echo  $subject; ?></td>
                   <td><?php echo  $date; ?></td>
                   <td><?php echo  $assigned_by_name; ?></td>
-                  <td><a href="action_edit_assignment.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_assignment.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
+                  <td><a href="edit_assignment.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_assignment.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
                     }

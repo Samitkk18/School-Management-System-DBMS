@@ -47,9 +47,9 @@
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
           $pass = '$2y$10$dh0Y9fnZxECVMNUvob8Sp.F3RmYKGPW3UrJM5YmHKY0TGbrLeOXXK';
-               $sql = "INSERT INTO teachers (teacher_sapid, t_f_name, t_l_name, t_email, t_mobile, t_emergency, t_emergency_mobile, salary, department, t_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_job, added_by, added_on)
-               VALUES ('$teacher_sapid', '$t_f_name', '$t_l_name', '$email', '$mobile', '$emergency', '$emergency_contact', '$salary', '$department', '$date', '$gender', '$address', '$city', '$pincode', '$state', '$country', '$bloodgroup', '$allergy', '$prescription',
-                  '$prev_job', '$added_by', '$added_on')";
+               $sql = "INSERT INTO teachers (teacher_sapid, t_f_name, t_l_name, t_email, t_mobile, t_emergency, t_emergency_mobile, salary, department, t_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_job, added_by, added_on, Status)
+               VALUES ('$teacher_sapid', '$t_f_name', '$t_l_name', '$email', '$mobile', '$emergency', '$emergency_contact', '$salary', '$department', '$date', '$gender', '$address', '$city', '$pincode', '$state', '$country', '$allergy', '$bloodgroup', '$prescription',
+                  '$prev_job', '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 

@@ -43,9 +43,9 @@
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
           $pass = '$2y$10$W.J.0KWYJnOcDIDt0juJL.nQU7/y6ph1SUfe59GZ2VO3FnbfimpIG';
-               $sql = "INSERT INTO parents (parent_sapid, p_f_name, p_l_name, p_occupation, p_email, p_mobile, p_work, p_student_name, p_student_id, p_dob, gender, address, city, pincode, state, country, added_by, added_on)
+               $sql = "INSERT INTO parents (parent_sapid, p_f_name, p_l_name, p_occupation, p_email, p_mobile, p_work, p_student_name, p_student_id, p_dob, gender, address, city, pincode, state, country, added_by, added_on, Status)
                VALUES ('$parent_sapid', '$p_f_name', '$p_l_name', '$occupation', '$email', '$mobile', '$work_number', '$student_name', '$student_id', '$date', '$gender', '$address', '$city', '$pincode', '$state', '$country',
-                  '$added_by', '$added_on')";
+                  '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 

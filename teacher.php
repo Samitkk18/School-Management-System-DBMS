@@ -53,7 +53,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM teachers";
+              $sql = "SELECT * FROM teachers WHERE Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 while($teacher = mysqli_fetch_assoc($result)){
@@ -86,7 +86,7 @@
                   <td><?php echo  $emergency; ?></td>
                   <td><?php echo  $date; ?></td>
                   <td><?php echo  $assigned_by_name; ?></td>
-                  <td><a href="action_edit_teacher.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_teacher.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
+                  <td><a href="edit_teacher.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_teacher.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
                     }

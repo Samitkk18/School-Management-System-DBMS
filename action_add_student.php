@@ -52,13 +52,14 @@
           // $username = $_SESSION['userUid'];
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
-               $sql = "INSERT INTO students (student_sapid, s_f_name, s_l_name, s_email, s_mobile, s_emergency, s_emergency_mobile, s_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_school, standard, division, s_mother_name, s_father_name, s_mother_email,  s_father_email, s_mother_mobile, s_father_mobile, s_mother_occupation, s_father_occupation, added_by, added_on)
+          $pass = '$2y$10$FmDn3zljji5CnXoPsXFFO.qVTXXjbiPwamaaAbpK4Lb/7vPEiZeGK';
+               $sql = "INSERT INTO students (student_sapid, s_f_name, s_l_name, s_email, s_mobile, s_emergency, s_emergency_mobile, s_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_school, standard, division, s_mother_name, s_father_name, s_mother_email,  s_father_email, s_mother_mobile, s_father_mobile, s_mother_occupation, s_father_occupation, added_by, added_on, Status)
                VALUES ('$student_sapid', '$s_f_name', '$s_l_name', '$email', '$mobile', '$emergency', '$emergency_contact', '$date', '$gender', '$address', '$city', '$pincode', '$state', '$country', '$allergy', '$bloodgroup', '$prescription',
-                  '$prev_school', '$standard', '$division', '$s_mother_name', '$s_father_name', '$s_mother_email', '$s_father_email', '$s_mother_mobile', '$s_father_mobile', '$s_mother_occupation', '$s_father_occupation', '$added_by', '$added_on')";
+                  '$prev_school', '$standard', '$division', '$s_mother_name', '$s_father_name', '$s_mother_email', '$s_father_email', '$s_mother_mobile', '$s_father_mobile', '$s_mother_occupation', '$s_father_occupation', '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 
-              $sql2 = "INSERT INTO users (uidUsers , emailUsers, pwdUsers, role_status) VALUES ('$student_sapid', '$email', '$2y$10$FmDn3zljji5CnXoPsXFFO.qVTXXjbiPwamaaAbpK4Lb/7vPEiZeGK', '3')";
+              $sql2 = "INSERT INTO users (uidUsers , emailUsers, pwdUsers, role_status) VALUES ('$student_sapid', '$email', '$pass', '3')";
               $query = $conn->query($sql);
               $query2 = $conn->query($sql2);
               if($query && $query2){

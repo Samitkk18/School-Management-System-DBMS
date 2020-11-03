@@ -33,8 +33,8 @@
           // $username = $_SESSION['userUid'];
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
-               $sql = "INSERT INTO assignments (a_title, a_description, a_standard, a_division, a_subject, a_date_of_sub, added_by, added_on)
-               VALUES ('$title', '$description', '$standard', '$division', '$subject', '$date', '$added_by', '$added_on')";
+               $sql = "INSERT INTO assignments (a_title, a_description, a_standard, a_division, a_subject, a_date_of_sub, added_by, added_on, Status)
+               VALUES ('$title', '$description', '$standard', '$division', '$subject', '$date', '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 
