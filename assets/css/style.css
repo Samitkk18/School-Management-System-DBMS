@@ -27,12 +27,12 @@ header{
 }
 
 .left_area span{
-  color: lightblue;
+  color: #32b1dc;
 }
 
 .logout_btn{
   padding: 8px;
-  background: lightblue;
+  background: #32b1dc;
   text-decoration: none;
   float: right;
   margin-top: -35px;
@@ -97,7 +97,7 @@ header{
 }
 
 .sidebar a:hover{
-  background: lightblue;
+  background: #32b1dc;
 }
 
 .sidebar i{
@@ -119,7 +119,7 @@ header{
 }
 
 .sidebar .item .menu-btn:hover{
-  color: lightblue;
+  color: #32b1dc;
 }
 
 .sidebar  .item .menu-btn i{
@@ -133,7 +133,7 @@ header{
 }
 
 .sidebar .item .sub-menu{
-    background: lightblue;
+    background: #32b1dc;
     overflow: hidden;
     max-height: 0;
     transition: 0.3s;
@@ -179,7 +179,7 @@ label #sidebar_btn{
 }
 
 label #sidebar_btn:hover{
-  color: lightblue;
+  color: #32b1dc;
 }
 
 #check:checked ~ .sidebar{
@@ -296,7 +296,7 @@ ul.breadcrumb li+li:before {
 
 /* Add a color to all links inside the list */
 ul.breadcrumb li a {
-  color: lightblue;
+  color: #32b1dc;
   text-decoration: none;
 }
 
@@ -432,7 +432,7 @@ ul.breadcrumb li a:hover {
   }
 
   .nav_bar .nav_btn:hover{
-    color: lightblue;
+    color: #32b1dc;
   }
 
   .mobile_nav_items{
@@ -453,7 +453,7 @@ ul.breadcrumb li a:hover {
   }
 
   .mobile_nav_items a:hover{
-    background: lightblue;
+    background: #32b1dc;
   }
 
   .mobile_nav_items i{
