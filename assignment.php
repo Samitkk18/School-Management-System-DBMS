@@ -5,6 +5,7 @@
 <?php if(!$_SESSION['userId']): ?>
    <?php header("Location: index.php") ?>
 <?php else: ?>
+  <?php if($_SESSION['role_status']==0 || $_SESSION['role_status']==1 || $_SESSION['role_status']==2): ?>
 <?php
     require_once "head.php";
  ?>
@@ -118,4 +119,7 @@
 <?php
      require_once "foot.php"
 ?>
+<?php else: ?>
+  <?php header("Location: index.php") ?>
+<?php endif; ?>
 <?php endif; ?>

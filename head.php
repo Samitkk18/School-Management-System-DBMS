@@ -147,16 +147,30 @@
             <a href="#"><i class="fas fa-cogs"></i><span>All Classes</span></a>
           </div>
         </li> -->
-        <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
-        <a href="student.php"><i class="fas fa-graduation-cap"></i><span>Manage Students</span></a>
-        <a href="teacher.php"><i class="fas fa-users"></i><span>Manage Teachers</span></a>
-        <a href="parent.php"><i class="fas fa-user-secret"></i><span>Manage Parents</span></a>
-        <a href="attendance.php"><i class="fas fa-list"></i><span>Attendance</span></a>
-        <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
-        <a href="library.php"><i class="fas fa-book"></i><span>Library</span></a>
-        <a href="course.php"><i class="fas fa-desktop"></i><span>Course</span></a>
-        <a href="subject.php"><i class="fas fa-file"></i><span>Subjects</span></a>
-        <a href="timetable.php"><i class="fas fa-file"></i><span>Time Table</span></a>
+        <?php if($_SESSION['role_status']==0 || $_SESSION['role_status']==1): ?>
+          <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+          <a href="student.php"><i class="fas fa-graduation-cap"></i><span>Manage Students</span></a>
+          <a href="teacher.php"><i class="fas fa-users"></i><span>Manage Teachers</span></a>
+          <a href="parent.php"><i class="fas fa-user-secret"></i><span>Manage Parents</span></a>
+          <a href="attendance.php"><i class="fas fa-list"></i><span>Attendance</span></a>
+          <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
+          <a href="library.php"><i class="fas fa-book"></i><span>Library</span></a>
+          <a href="course.php"><i class="fas fa-desktop"></i><span>Course</span></a>
+          <a href="subject.php"><i class="fas fa-file"></i><span>Subjects</span></a>
+          <a href="calendar.php"><i class="fas fa-file"></i><span>Calendar</span></a>
+        <?php elseif($_SESSION['role_status']==2): ?>
+          <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+          <a href="attendance.php"><i class="fas fa-list"></i><span>Attendance</span></a>
+          <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
+        <?php elseif($_SESSION['role_status']==3): ?>
+          <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+        <?php elseif($_SESSION['role_status']==4): ?>
+          <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+        <?php elseif($_SESSION['role_status']==5): ?>
+          <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+          <a href="library.php"><i class="fas fa-book"></i><span>Library</span></a>
+        <?php endif; ?>
+
 
     </div>
     <!--sidebar end-->
