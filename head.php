@@ -151,7 +151,7 @@
         <a href="student.php"><i class="fas fa-graduation-cap"></i><span>Manage Students</span></a>
         <a href="teacher.php"><i class="fas fa-users"></i><span>Manage Teachers</span></a>
         <a href="parent.php"><i class="fas fa-user-secret"></i><span>Manage Parents</span></a>
-        <a href="#"><i class="fas fa-list"></i><span>Attendance</span></a>
+        <a href="attendance.php"><i class="fas fa-list"></i><span>Attendance</span></a>
         <a href="assignment.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
         <a href="library.php"><i class="fas fa-book"></i><span>Library</span></a>
         <a href="course.php"><i class="fas fa-desktop"></i><span>Course</span></a>
