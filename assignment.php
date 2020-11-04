@@ -54,12 +54,13 @@
               $sql = "SELECT * FROM assignments WHERE Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
+                $i=1;
                 while($assignments = mysqli_fetch_assoc($result)){
                   $id = $assignments['assignment_id'];
                   $title = $assignments['a_title'];
                   $description = $assignments['a_description'];
-                  $standard = $assignments['a_standard'];
-                  $division = $assignments['a_division'];
+                  $course = $assignments['a_course'];
+                  $year = $assignments['a_year'];
                   $subject = $assignments['a_subject'];
                   $date = $assignments['a_date_of_sub'];
                   $assigned_by = $assignments['added_by'];
@@ -71,17 +72,36 @@
 
               ?>
                 <tr class="data">
-                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $i; ?></td>
                   <td><?php echo  $title; ?></td>
                   <td><?php echo  $description; ?></td>
-                  <td><?php echo  $standard; ?></td>
-                  <td><?php echo  $division; ?></td>
+                  <?php
+                  $sql_course = "SELECT * FROM course WHERE course_id='$course'";
+                  $result_course = mysqli_query($conn, $sql_course)or die('Error');
+                  if(mysqli_num_rows($result_course)>0){
+                    while($row = mysqli_fetch_assoc($result_course)){
+                      $course_name = $row['course_name'];
+                    }
+                  }
+                  ?>
+                  <td><?php echo  $course_name; ?></td>
+                  <?php
+                  $sql_year = "SELECT * FROM years WHERE year_id='$year'";
+                  $result_year = mysqli_query($conn, $sql_year)or die('Error');
+                  if(mysqli_num_rows($result_year)>0){
+                    while($data = mysqli_fetch_assoc($result_year)){
+                      $year_name = $data['year_name'];
+                    }
+                  }
+                  ?>
+                  <td><?php echo  $year_name; ?></td>
                   <td><?php echo  $subject; ?></td>
                   <td><?php echo  $date; ?></td>
                   <td><?php echo  $assigned_by_name; ?></td>
                   <td><a href="edit_assignment.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_assignment.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
+              $i++;
                     }
                   }
                 }

@@ -56,6 +56,7 @@
               $sql = "SELECT * FROM teachers WHERE Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
+                $i=1;
                 while($teacher = mysqli_fetch_assoc($result)){
                   $id = $teacher['teacher_id'];
                   $sapid = $teacher['teacher_sapid'];
@@ -76,11 +77,20 @@
 
               ?>
                 <tr class="data">
-                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $i; ?></td>
                   <td><?php echo  $sapid; ?></td>
                   <td><?php echo  $first_name." ".$last_name; ?></td>
                   <td><?php echo  $salary; ?></td>
-                  <td><?php echo  $department; ?></td>
+                  <?php
+                  $sql_course = "SELECT * FROM course WHERE course_id='$department'";
+                  $result_course = mysqli_query($conn, $sql_course)or die('Error');
+                  if(mysqli_num_rows($result_course)>0){
+                    while($row = mysqli_fetch_assoc($result_course)){
+                      $course_name = $row['course_name'];
+                    }
+                  }
+                  ?>
+                  <td><?php echo  $course_name; ?></td>
                   <td><?php echo  $email; ?></td>
                   <td><?php echo  $mobile; ?></td>
                   <td><?php echo  $emergency; ?></td>
@@ -89,6 +99,7 @@
                   <td><a href="edit_teacher.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_teacher.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
+              $i++;
                     }
                   }
                 }

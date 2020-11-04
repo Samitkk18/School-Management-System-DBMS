@@ -102,10 +102,28 @@
          <div class="row">
            <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
-             <input type="text" name="date" class="form-control" value="<?php echo $p_dob; ?>" placeholder="Select Date Of Birth">
+             <input type="date" name="date" class="form-control" value="<?php echo $p_dob; ?>" required>
            </div>
            <div class="column2">
               <label for="gender" class="label">Gender:</label><br>
+              <select class="form-control" name="gender">
+                <option>Select a Gender</option>
+                <?php if($gender == 'Male'){
+                  echo '<option value="Male" selected="selected">Male</option>';
+                }else{
+                  echo '<option value="Male">Male</option>';
+                } ?>
+                <?php if($gender == 'Female'){
+                  echo '<option value="Female" selected="selected">Female</option>';
+                }else{
+                  echo '<option value="Female">Female</option>';
+                } ?>
+                <?php if($gender == 'Other'){
+                  echo '<option value="Other" selected="selected">Other</option>';
+                }else{
+                  echo '<option value="Other">Other</option>';
+                } ?>
+              </select>
              <!-- <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name"> -->
            </div>
          </div>

@@ -75,10 +75,16 @@
          <div class="row">
            <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
-             <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth">
+             <input type="date" name="date" class="form-control" value="" required>
            </div>
            <div class="column2">
               <label for="gender" class="label">Gender:</label><br>
+              <select class="form-control" name="gender">
+                <option>Select a Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
              <!-- <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name"> -->
            </div>
          </div>

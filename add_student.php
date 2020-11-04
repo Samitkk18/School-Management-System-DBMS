@@ -61,10 +61,16 @@
          <div class="row">
            <div class="column1">
              <label for="date" class="label">Date Of Birth:</label><br>
-             <input type="text" name="date" class="form-control" value="" placeholder="Select Date Of Birth" required>
+             <input type="date" name="date" class="form-control" value="" required>
            </div>
            <div class="column2">
               <label for="gender" class="label">Gender:</label><br>
+              <select class="form-control" name="gender">
+                <option>Select a Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
              <!-- <input type="text" name="l_name" class="form-control" value="" placeholder="Enter Last Name"> -->
            </div>
          </div>
@@ -118,12 +124,40 @@
          <!-- Add std and div both dropdowns -->
          <div class="row">
            <div class="column1">
-             <label for="standard" class="label">Standard:</label><br>
-             <input type="text" name="standard" class="form-control" value="" placeholder="Enter Standard" required>
+             <label for="course" class="label">Course:</label><br>
+              <select name="course" class="form-control" required>
+                <option>Select a Course</option>
+                <?php
+                   $sql = "SELECT * FROM course";
+                   $result = mysqli_query($conn, $sql)or die('Error');
+                   if(mysqli_num_rows($result)>0){
+                     while($course = mysqli_fetch_assoc($result)){
+                       $course_name = $course['course_name'];
+                       $course_id = $course['course_id'];
+                       echo "<option value=".$course_id.">$course_name</option>";
+                     }
+                   }
+                 ?>
+              </select>
+             <!-- <input type="text" name="course" class="form-control" value="" placeholder="Enter Standard" required> -->
            </div>
            <div class="column2">
-              <label for="division" class="label">Division:</label><br>
-             <input type="text" name="division" class="form-control" value="" placeholder="Enter Division" required>
+              <label for="year" class="label">Year:</label><br>
+              <select name="year" class="form-control" required>
+                <option>Select a Year</option>
+                <?php
+                   $sql = "SELECT * FROM years";
+                   $result = mysqli_query($conn, $sql)or die('Error');
+                   if(mysqli_num_rows($result)>0){
+                     while($year = mysqli_fetch_assoc($result)){
+                       $year_name = $year['year_name'];
+                       $year_id = $year['year_id'];
+                       echo "<option value=".$year_id.">$year_name</option>";
+                     }
+                   }
+                 ?>
+              </select>
+             <!-- <input type="text" name="year" class="form-control" value="" placeholder="Enter Division" required> -->
            </div>
          </div>
        </div>
@@ -184,7 +218,6 @@
      </div>
    </form>
  </div>
-
 <?php
      require_once "foot.php"
 ?>

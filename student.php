@@ -40,8 +40,8 @@
                <th>Sr No.</th>
                <th>SAP ID</th>
                <th>Name</th>
-               <th>Standard</th>
-               <th>Division</th>
+               <th>Course</th>
+               <th>Year</th>
                <th>Email</th>
                <th>Mobile</th>
                <th>Emergency Contact</th>
@@ -56,14 +56,15 @@
               $sql = "SELECT * FROM students WHERE status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
+                $i=1;
                 while($student = mysqli_fetch_assoc($result)){
                   $id = $student['student_id'];
                   $sapid = $student['student_sapid'];
                   $first_name = $student['s_f_name'];
                   $last_name = $student['s_l_name'];
                   $email = $student['s_email'];
-                  $standard = $student['standard'];
-                  $division = $student['division'];
+                  $course= $student['course'];
+                  $year = $student['year'];
                   $mobile = $student['s_mobile'];
                   $emergency = $student['s_emergency_mobile'];
                   $date = $student['added_on'];
@@ -76,11 +77,29 @@
 
               ?>
                 <tr class="data">
-                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $i; ?></td>
                   <td><?php echo  $sapid; ?></td>
                   <td><?php echo  $first_name." ".$last_name; ?></td>
-                  <td><?php echo  $standard; ?></td>
-                  <td><?php echo  $division; ?></td>
+                  <?php
+                  $sql_course = "SELECT * FROM course WHERE course_id='$course'";
+                  $result_course = mysqli_query($conn, $sql_course)or die('Error');
+                  if(mysqli_num_rows($result_course)>0){
+                    while($row = mysqli_fetch_assoc($result_course)){
+                      $course_name = $row['course_name'];
+                    }
+                  }
+                  ?>
+                  <td><?php echo  $course_name; ?></td>
+                  <?php
+                  $sql_year = "SELECT * FROM years WHERE year_id='$year'";
+                  $result_year = mysqli_query($conn, $sql_year)or die('Error');
+                  if(mysqli_num_rows($result_year)>0){
+                    while($data = mysqli_fetch_assoc($result_year)){
+                      $year_name = $data['year_name'];
+                    }
+                  }
+                  ?>
+                  <td><?php echo  $year_name; ?></td>
                   <td><?php echo  $email; ?></td>
                   <td><?php echo  $mobile; ?></td>
                   <td><?php echo  $emergency; ?></td>
@@ -89,6 +108,7 @@
                   <td><a href="edit_student.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_student.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
+              $i++;
                     }
                   }
                 }

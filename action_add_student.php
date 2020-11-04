@@ -8,6 +8,8 @@
 
   <?php
       if(isset($_POST['student_add'])){
+        // print_r($_POST);
+        // exit();
           $added_by = $_SESSION['userId'];
           date_default_timezone_set('Asia/Kolkata');
           $added_on = date('Y-m-d H:i:s');
@@ -18,8 +20,7 @@
           $emergency = $_POST['emergency'];
           $emergency_contact = $_POST['emergency_contact'];
           $date = $_POST['date'];
-          // $gender = $_POST['gender'];
-          $gender = "Male";
+          $gender = $_POST['gender'];
           $address = $_POST['address'];
           $city = $_POST['city'];
           $pincode = $_POST['pincode'];
@@ -29,8 +30,8 @@
           $allergy = $_POST['allergies'];
           $prescription = $_POST['prescription'];
           $prev_school = $_POST['prev_school'];
-          $standard = $_POST['standard'];
-          $division = $_POST['division'];
+          $course = $_POST['course'];
+          $year = $_POST['year'];
           $s_mother_name = $_POST['mother_name'];
           $s_father_name = $_POST['father_name'];
           $s_mother_email = $_POST['m_email'];
@@ -53,9 +54,9 @@
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
           $pass = '$2y$10$FmDn3zljji5CnXoPsXFFO.qVTXXjbiPwamaaAbpK4Lb/7vPEiZeGK';
-               $sql = "INSERT INTO students (student_sapid, s_f_name, s_l_name, s_email, s_mobile, s_emergency, s_emergency_mobile, s_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_school, standard, division, s_mother_name, s_father_name, s_mother_email,  s_father_email, s_mother_mobile, s_father_mobile, s_mother_occupation, s_father_occupation, added_by, added_on, Status)
+               $sql = "INSERT INTO students (student_sapid, s_f_name, s_l_name, s_email, s_mobile, s_emergency, s_emergency_mobile, s_dob, gender, address, city, pincode, state, country, allergy, bloodgroup, p_medicines, prev_school, course, year, s_mother_name, s_father_name, s_mother_email,  s_father_email, s_mother_mobile, s_father_mobile, s_mother_occupation, s_father_occupation, added_by, added_on, Status)
                VALUES ('$student_sapid', '$s_f_name', '$s_l_name', '$email', '$mobile', '$emergency', '$emergency_contact', '$date', '$gender', '$address', '$city', '$pincode', '$state', '$country', '$allergy', '$bloodgroup', '$prescription',
-                  '$prev_school', '$standard', '$division', '$s_mother_name', '$s_father_name', '$s_mother_email', '$s_father_email', '$s_mother_mobile', '$s_father_mobile', '$s_mother_occupation', '$s_father_occupation', '$added_by', '$added_on', 'Active')";
+                  '$prev_school', '$course', '$year', '$s_mother_name', '$s_father_name', '$s_mother_email', '$s_father_email', '$s_mother_mobile', '$s_father_mobile', '$s_mother_occupation', '$s_father_occupation', '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 

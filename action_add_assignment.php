@@ -16,8 +16,8 @@
           $added_on = date('Y-m-d H:i:s');
           $title = $_POST['title'];
           $description = $_POST['description'];
-          $standard = $_POST['standard'];
-          $division = $_POST['division'];
+          $course = $_POST['course'];
+          $year = $_POST['year'];
           $subject = $_POST['subject'];
           $date = $_POST['date_of_sub'];
           // $sql_s = "SELECT * FROM students ORDER BY student_id DESC LIMIT 1";
@@ -33,8 +33,8 @@
           // $username = $_SESSION['userUid'];
           // $post_id = $_POST['id'];
           // $comment = $_POST['comment'];
-               $sql = "INSERT INTO assignments (a_title, a_description, a_standard, a_division, a_subject, a_date_of_sub, added_by, added_on, Status)
-               VALUES ('$title', '$description', '$standard', '$division', '$subject', '$date', '$added_by', '$added_on', 'Active')";
+               $sql = "INSERT INTO assignments (a_title, a_description, a_course, a_year, a_subject, a_date_of_sub, added_by, added_on, Status)
+               VALUES ('$title', '$description', '$course', '$year', '$subject', '$date', '$added_by', '$added_on', 'Active')";
                   // echo $sql;
                   // exit();
 

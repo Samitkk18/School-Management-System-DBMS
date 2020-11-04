@@ -56,6 +56,7 @@
               $sql = "SELECT * FROM parents WHERE Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
+                $i=1;
                 while($parent = mysqli_fetch_assoc($result)){
                   $id = $parent['parent_id'];
                   $sapid = $parent['parent_sapid'];
@@ -76,7 +77,7 @@
 
               ?>
                 <tr class="data">
-                  <td><?php echo  $id; ?></td>
+                  <td><?php echo  $i;?></td>
                   <td><?php echo  $sapid; ?></td>
                   <td><?php echo  $first_name." ".$last_name; ?></td>
                   <td><?php echo  $student_name; ?></td>
@@ -89,6 +90,7 @@
                   <td><a href="edit_parent.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_parent.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
+              $i++;
                     }
                   }
                 }

@@ -16,12 +16,12 @@
           $added_on = date('Y-m-d H:i:s');
           $title = $_POST['title'];
           $description = $_POST['description'];
-          $standard = $_POST['standard'];
-          $division = $_POST['division'];
+          $course = $_POST['course'];
+          $year = $_POST['year'];
           $subject = $_POST['subject'];
           $date = $_POST['date_of_sub'];
           $id = $_POST['id'];
-               $sql = "UPDATE assignments SET a_title='$title', a_description='$description', a_standard='$standard', a_division='$division', a_subject='$subject', a_date_of_sub='$date', added_by='$added_by', added_on='$added_on' WHERE assignment_id='$id'";
+               $sql = "UPDATE assignments SET a_title='$title', a_description='$description', a_course='$course', a_year='$year', a_subject='$subject', a_date_of_sub='$date', added_by='$added_by', added_on='$added_on' WHERE assignment_id='$id'";
                   // echo $sql;
                   // exit();
 

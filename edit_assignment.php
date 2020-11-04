@@ -17,8 +17,8 @@
          $assignment_id = $assignment['assignment_id'];
          $a_title = $assignment['a_title'];
          $a_description = $assignment['a_description'];
-         $a_standard = $assignment['a_standard'];
-         $a_division = $assignment['a_division'];
+         $course_n = $assignment['a_course'];
+         $year_n = $assignment['a_year'];
          $a_subject = $assignment['a_subject'];
          $date_of_sub = $assignment['a_date_of_sub'];
          $date = $assignment['added_on'];
@@ -59,12 +59,52 @@
          </div>
          <div class="row">
            <div class="column1">
-             <label for="standard" class="label">Standard:</label><br>
-             <input type="text" name="standard" class="form-control" value="<?php echo $a_standard; ?>" placeholder="Select Standard">
+             <label for="course" class="label">Course:</label><br>
+             <select name="course" class="form-control" required>
+               <option>Select a Course</option>
+               <?php
+                  $sql = "SELECT * FROM course";
+                  $result = mysqli_query($conn, $sql)or die('Error');
+                  if(mysqli_num_rows($result)>0){
+                    while($course = mysqli_fetch_assoc($result)){
+                      $course_name = $course['course_name'];
+                      $course_id = $course['course_id'];
+                      if($course_n == $course_id){
+                        $selected = "selected";
+                        echo "<option value=".$course_id." selected=".$selected.">$course_name</option>";
+                      }
+                      else{
+                        echo "<option value=".$course_id.">$course_name</option>";
+                      }
+                    }
+                  }
+                ?>
+             </select>
+             <!-- <input type="text" name="standard" class="form-control" value="<?php echo $a_standard; ?>" placeholder="Select Standard"> -->
            </div>
            <div class="column2">
-             <label for="division" class="label">Division:</label><br>
-             <input type="text" name="division" class="form-control" value="<?php echo $a_division; ?>" placeholder="Select Division">
+             <label for="year" class="label">Year:</label><br>
+             <select name="year" class="form-control" required>
+               <option>Select a Year</option>
+               <?php
+                  $sql = "SELECT * FROM years";
+                  $result = mysqli_query($conn, $sql)or die('Error');
+                  if(mysqli_num_rows($result)>0){
+                    while($year = mysqli_fetch_assoc($result)){
+                      $year_name = $year['year_name'];
+                      $year_id = $year['year_id'];
+                      if($year_n == $year_id){
+                        $selected = "selected";
+                        echo "<option value=".$year_id." selected=".$selected.">$year_name</option>";
+                      }
+                      else{
+                        echo "<option value=".$year_id.">$year_name</option>";
+                      }
+                    }
+                  }
+                ?>
+             </select>
+             <!-- <input type="text" name="division" class="form-control" value="<?php echo $a_division; ?>" placeholder="Select Division"> -->
            </div>
          </div>
          <div class="row">

@@ -20,8 +20,7 @@
           $emergency = $_POST['emergency'];
           $emergency_contact = $_POST['emergency_contact'];
           $date = $_POST['date'];
-          // $gender = $_POST['gender'];
-          $gender = "Male";
+          $gender = $_POST['gender'];
           $address = $_POST['address'];
           $city = $_POST['city'];
           $pincode = $_POST['pincode'];

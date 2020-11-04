@@ -20,8 +20,7 @@
           $emergency = $_POST['emergency'];
           $emergency_contact = $_POST['emergency_contact'];
           $date = $_POST['date'];
-          // $gender = $_POST['gender'];
-          $gender = "Male";
+          $gender = $_POST['gender'];
           $address = $_POST['address'];
           $city = $_POST['city'];
           $pincode = $_POST['pincode'];
@@ -31,8 +30,8 @@
           $allergy = $_POST['allergies'];
           $prescription = $_POST['prescription'];
           $prev_school = $_POST['prev_school'];
-          $standard = $_POST['standard'];
-          $division = $_POST['division'];
+          $course = $_POST['course'];
+          $year = $_POST['year'];
           $s_mother_name = $_POST['mother_name'];
           $s_father_name = $_POST['father_name'];
           $s_mother_email = $_POST['m_email'];
@@ -44,7 +43,7 @@
           $id = $_POST['id'];
                $sql = "UPDATE students SET s_f_name='$s_f_name', s_l_name='$s_l_name', s_email='$email', s_mobile='$mobile', s_emergency='$emergency', s_emergency_mobile='$emergency_contact',
                 s_dob='$date', gender='$gender', address='$address', city='$city', pincode='$pincode', state='$state', country='$country', allergy='$allergy', bloodgroup='$bloodgroup', p_medicines='$prescription',
-                 prev_school='$prev_school', standard='$standard', division='$division', s_mother_name='$s_mother_name', s_father_name='$s_father_name', s_mother_email='$s_mother_email',  s_father_email='$s_father_email',
+                 prev_school='$prev_school', course='$course', year='$year', s_mother_name='$s_mother_name', s_father_name='$s_father_name', s_mother_email='$s_mother_email',  s_father_email='$s_father_email',
                   s_mother_mobile='$s_mother_mobile', s_father_mobile='$s_father_mobile', s_mother_occupation='$s_mother_occupation', s_father_occupation='$s_father_occupation', added_by='$added_by', added_on='$added_on' WHERE student_id = '$id'";
                   // echo $sql;
                   // exit();
