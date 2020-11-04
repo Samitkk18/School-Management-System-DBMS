@@ -60,7 +60,7 @@
          <div class="row">
            <div class="column1">
              <label for="course" class="label">Course:</label><br>
-             <select name="course" class="form-control" required>
+             <select name="course" class="form-control" id="course_tag" required>
                <option>Select a Course</option>
                <?php
                   $sql = "SELECT * FROM course";
@@ -84,7 +84,7 @@
            </div>
            <div class="column2">
              <label for="year" class="label">Year:</label><br>
-             <select name="year" class="form-control" required>
+             <select name="year" class="form-control" id="year_tag" required>
                <option>Select a Year</option>
                <?php
                   $sql = "SELECT * FROM years";
@@ -110,7 +110,28 @@
          <div class="row">
            <div class="column1">
              <label for="subject" class="label">Subject:</label><br>
-             <input type="text" name="subject" class="form-control" value="<?php echo $a_subject; ?>" placeholder="Select Subject">
+
+             <select name="year" class="form-control" id="subject_tag" required>
+               <option>Select a Subject</option>
+               <?php
+                  $sql = "SELECT * FROM subject WHERE course_name='$course_n' AND year='$year_n'";
+                  $result = mysqli_query($conn, $sql)or die('Error');
+                  if(mysqli_num_rows($result)>0){
+                    while($subject = mysqli_fetch_assoc($result)){
+                      $subject_id= $subject['subject_id'];
+                      $subject_name = $subject['subject_name'];
+                      if($a_subject == $subject_id){
+                        $selected = "selected";
+                        echo "<option value=".$subject_id." selected=".$selected.">$subject_name</option>";
+                      }
+                      else{
+                        echo "<option value=".$year_id.">$year_name</option>";
+                      }
+                    }
+                  }
+                ?>
+             </select>
+             <!-- <input type="text" name="subject" class="form-control" value="<?php echo $a_subject; ?>" placeholder="Select Subject"> -->
            </div>
            <div class="column2">
              <label for="date_of_sub" class="label">Date of Submission:</label><br>
@@ -130,7 +151,27 @@
      </div>
    </form>
  </div>
-
+ <script>
+   $("#course_tag,#year_tag").change(function(){
+     var course = $("#course_tag option:selected").val();
+     var year = $("#year_tag option:selected").val();
+     console.log(course);
+     console.log(year);
+     if(course != "Select a Course" && year !="Select a Year"){
+       $.ajax({
+         method: "POST",
+         url: "action_get_subjects.php",
+         data: {'course':course, 'year': year},
+         success:function(response){
+           console.log(response);
+           $("#subject_tag").find('option').remove().end();
+           $("#subject_tag").append('<option value="">Select a Subject</option>');
+           $("#subject_tag").append(response);
+         }
+       });
+     }
+   });
+ </script>
 <?php
      require_once "foot.php"
 ?>
