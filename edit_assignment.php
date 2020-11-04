@@ -111,7 +111,7 @@
            <div class="column1">
              <label for="subject" class="label">Subject:</label><br>
 
-             <select name="year" class="form-control" id="subject_tag" required>
+             <select name="subject" class="form-control" id="subject_tag" required>
                <option>Select a Subject</option>
                <?php
                   $sql = "SELECT * FROM subject WHERE course_name='$course_n' AND year='$year_n'";

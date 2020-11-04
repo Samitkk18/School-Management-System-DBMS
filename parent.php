@@ -54,7 +54,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM parents WHERE Status='Active'";
+              $sql = "SELECT parents.*, users.* FROM parents LEFT JOIN users ON parents.added_by=users.idUsers WHERE parents.Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 $i=1;
@@ -70,11 +70,12 @@
                   $student_id = $parent['p_student_id'];
                   $occupation = $parent['p_occupation'];
                   $assigned_by = $parent['added_by'];
-                  $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
-                  $result2 = mysqli_query($conn, $sql2)or die('Error');
-                  if(mysqli_num_rows($result2)>0){
-                    while($name = mysqli_fetch_assoc($result2)){
-                      $assigned_by_name = $name['uidUsers'];
+                  $assigned_by_name = $parent['uidUsers'];
+                  // $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
+                  // $result2 = mysqli_query($conn, $sql2)or die('Error');
+                  // if(mysqli_num_rows($result2)>0){
+                  //   while($name = mysqli_fetch_assoc($result2)){
+                  //     $assigned_by_name = $name['uidUsers'];
 
               ?>
                 <tr class="data">
@@ -92,8 +93,8 @@
                 </tr>
               <?php
               $i++;
-                    }
-                  }
+                  //   }
+                  // }
                 }
               }
               ?>

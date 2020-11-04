@@ -54,7 +54,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM students WHERE status='Active'";
+              $sql = "SELECT students.*, users.*, course.*, years.* FROM students LEFT JOIN users ON students.added_by=users.idUsers LEFT JOIN course ON students.course=course.course_id LEFT JOIN years ON students.year=years.year_id WHERE students.Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 $i=1;
@@ -65,23 +65,24 @@
                   $last_name = $student['s_l_name'];
                   $email = $student['s_email'];
                   $course= $student['course'];
-                  $year = $student['year'];
+                  $course_name= $student['course_name'];
+                  $year_name = $student['year_name'];
                   $mobile = $student['s_mobile'];
                   $emergency = $student['s_emergency_mobile'];
                   $date = $student['added_on'];
-                  $assigned_by = $student['added_by'];
-                  $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
-                  $result2 = mysqli_query($conn, $sql2)or die('Error');
-                  if(mysqli_num_rows($result2)>0){
-                    while($name = mysqli_fetch_assoc($result2)){
-                      $assigned_by_name = $name['uidUsers'];
+                  $assigned_by = $student['uidUsers'];
+                  // $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
+                  // $result2 = mysqli_query($conn, $sql2)or die('Error');
+                  // if(mysqli_num_rows($result2)>0){
+                  //   while($name = mysqli_fetch_assoc($result2)){
+                  //     $assigned_by_name = $name['uidUsers'];
 
               ?>
                 <tr class="data">
                   <td><?php echo  $i; ?></td>
                   <td><?php echo  $sapid; ?></td>
                   <td><?php echo  $first_name." ".$last_name; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_course = "SELECT * FROM course WHERE course_id='$course'";
                   $result_course = mysqli_query($conn, $sql_course)or die('Error');
                   if(mysqli_num_rows($result_course)>0){
@@ -89,9 +90,9 @@
                       $course_name = $row['course_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $course_name; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_year = "SELECT * FROM years WHERE year_id='$year'";
                   $result_year = mysqli_query($conn, $sql_year)or die('Error');
                   if(mysqli_num_rows($result_year)>0){
@@ -99,19 +100,19 @@
                       $year_name = $data['year_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $year_name; ?></td>
                   <td><?php echo  $email; ?></td>
                   <td><?php echo  $mobile; ?></td>
                   <td><?php echo  $emergency; ?></td>
                   <td><?php echo  $date; ?></td>
-                  <td><?php echo  $assigned_by_name; ?></td>
+                  <td><?php echo  $assigned_by; ?></td>
                   <td><a href="edit_student.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_student.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>
               <?php
               $i++;
-                    }
-                  }
+                  //   }
+                  // }
                 }
               }
               ?>

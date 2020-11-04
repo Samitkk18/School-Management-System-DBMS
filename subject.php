@@ -49,24 +49,27 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM subject WHERE status = 'Active'";
+             $sql = "SELECT subject.*, course.*, years.* FROM subject LEFT JOIN course ON subject.course_name=course.course_id LEFT JOIN years ON subject.year=years.year_id WHERE subject.Status='Active';";
+              // $sql = "SELECT * FROM subject WHERE status = 'Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 $i=1;
                 while($subject = mysqli_fetch_assoc($result)){
                   $id = $subject['subject_id'];
-                  $course = $subject['course_name'];
+                  // $course = $subject['course_name'];
                   $subject_name = $subject['subject_name'];
                   $subject_code = $subject['subject_code'];
+                  $course_name = $subject['course_name'];
+                  $year_name = $subject['year_name'];
 
-                  $year = $subject['year'];
+                  // $year = $subject['year'];
 
               ?>
                 <tr class="data">
                   <td><?php echo  $i; ?></td>
                   <td><?php echo  $subject_name; ?></td>
                   <td><?php echo  $subject_code; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_course = "SELECT * FROM course WHERE course_id='$course'";
                   $result_course = mysqli_query($conn, $sql_course)or die('Error');
                   if(mysqli_num_rows($result_course)>0){
@@ -74,9 +77,9 @@
                       $course_name = $row['course_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $course_name; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_year = "SELECT * FROM years WHERE year_id='$year'";
                   $result_year = mysqli_query($conn, $sql_year)or die('Error');
                   if(mysqli_num_rows($result_year)>0){
@@ -84,7 +87,7 @@
                       $year_name = $data['year_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $year_name; ?></td>
                   <td><a href="edit_subject.php?id=<?php echo $id; ?>" class="table-data">Edit </a> / <a href="action_delete_subject.php?id=<?php echo $id; ?>" class="table-data"> Delete</a></th>
                 </tr>

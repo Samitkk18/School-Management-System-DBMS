@@ -52,7 +52,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-              $sql = "SELECT * FROM assignments WHERE Status='Active'";
+              $sql = "SELECT assignments.*, users.*, course.*, years.*, subject.* FROM assignments LEFT JOIN users ON assignments.added_by=users.idUsers LEFT JOIN course ON assignments.a_course=course.course_id LEFT JOIN years ON assignments.a_year=years.year_id LEFT JOIN subject ON assignments.a_subject=subject.subject_id WHERE assignments.Status='Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){
                 $i=1;
@@ -62,21 +62,24 @@
                   $description = $assignments['a_description'];
                   $course = $assignments['a_course'];
                   $year = $assignments['a_year'];
-                  $subject = $assignments['a_subject'];
+                  $subject = $assignments['subject_name'];
                   $date = $assignments['a_date_of_sub'];
                   $assigned_by = $assignments['added_by'];
-                  $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
-                  $result2 = mysqli_query($conn, $sql2)or die('Error');
-                  if(mysqli_num_rows($result2)>0){
-                    while($name = mysqli_fetch_assoc($result2)){
-                      $assigned_by_name = $name['uidUsers'];
+                  $assigned_by_name = $assignments['uidUsers'];
+                  $course_name = $assignments['course_name'];
+                  $year_name = $assignments['year_name'];
+                  // $sql2 = "SELECT * FROM users WHERE idUsers='$assigned_by'";
+                  // $result2 = mysqli_query($conn, $sql2)or die('Error');
+                  // if(mysqli_num_rows($result2)>0){
+                  //   while($name = mysqli_fetch_assoc($result2)){
+                  //     $assigned_by_name = $name['uidUsers'];
 
               ?>
                 <tr class="data">
                   <td><?php echo  $i; ?></td>
                   <td><?php echo  $title; ?></td>
                   <td><?php echo  $description; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_course = "SELECT * FROM course WHERE course_id='$course'";
                   $result_course = mysqli_query($conn, $sql_course)or die('Error');
                   if(mysqli_num_rows($result_course)>0){
@@ -84,9 +87,9 @@
                       $course_name = $row['course_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $course_name; ?></td>
-                  <?php
+                  <!-- <?php
                   $sql_year = "SELECT * FROM years WHERE year_id='$year'";
                   $result_year = mysqli_query($conn, $sql_year)or die('Error');
                   if(mysqli_num_rows($result_year)>0){
@@ -94,7 +97,7 @@
                       $year_name = $data['year_name'];
                     }
                   }
-                  ?>
+                  ?> -->
                   <td><?php echo  $year_name; ?></td>
                   <td><?php echo  $subject; ?></td>
                   <td><?php echo  $date; ?></td>
@@ -103,8 +106,8 @@
                 </tr>
               <?php
               $i++;
-                    }
-                  }
+                  //   }
+                  // }
                 }
               }
               ?>
