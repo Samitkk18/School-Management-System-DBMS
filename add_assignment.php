@@ -13,7 +13,7 @@
    <div class="row">
      <div class="column">
        <div class="content-header-title">
-          <h3>Add Student</h3>
+          <h3>Add Assignment</h3>
           <ul class="breadcrumb">
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="assignment.php">Assignment List</a></li>
@@ -42,7 +42,7 @@
          <div class="row">
            <div class="column1">
              <label for="course" class="label">Course:</label><br>
-             <select name="course" class="form-control" required>
+             <select name="course" class="form-control" id="course_tag" required>
                <option>Select a Course</option>
                <?php
                   $sql = "SELECT * FROM course";
@@ -60,7 +60,7 @@
            </div>
            <div class="column2">
              <label for="year" class="label">Year:</label><br>
-             <select name="year" class="form-control" required>
+             <select name="year" class="form-control" id="year_tag" required>
                <option>Select a Year</option>
                <?php
                   $sql = "SELECT * FROM years";
@@ -80,7 +80,10 @@
          <div class="row">
            <div class="column1">
              <label for="subject" class="label">Subject:</label><br>
-             <input type="text" name="subject" class="form-control" value="" placeholder="Select Subject">
+             <select class="form-control" name="subject" id="subject_tag">
+               <option>Select a Subject</option>
+             </select>
+             <!-- <input type="text" name="subject" class="form-control" value="" placeholder="Select Subject"> -->
            </div>
            <div class="column2">
              <label for="date_of_sub" class="label">Date of Submission:</label><br>
@@ -99,7 +102,25 @@
      </div>
    </form>
  </div>
-
+<script>
+  $("#course_tag,#year_tag").change(function(){
+    var course = $("#course_tag option:selected").val();
+    var year = $("#year_tag option:selected").val();
+    console.log(course);
+    console.log(year);
+    if(course != "Select a Course" && year !="Select a Year"){
+      $.ajax({
+        method: "POST",
+        url: "action_get_subjects.php",
+        data: {'course':course, 'year': year},
+        success:function(response){
+          console.log(response);
+          $("#subject_tag").append(response);
+        }
+      });
+    }
+  });
+</script>
 <?php
      require_once "foot.php"
 ?>
