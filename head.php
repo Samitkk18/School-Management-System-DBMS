@@ -166,6 +166,7 @@
           <a href="calendar.php"><i class="fas fa-file"></i><span>Calendar</span></a>
         <?php elseif($_SESSION['role_status']==3): ?>
           <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
+          <a href="assignment_student.php"><i class="fas fa-coffee"></i><span>Assignment</span></a>
           <a href="calendar.php"><i class="fas fa-file"></i><span>Calendar</span></a>
         <?php elseif($_SESSION['role_status']==4): ?>
           <a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a>
