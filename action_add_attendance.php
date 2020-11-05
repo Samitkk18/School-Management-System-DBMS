@@ -21,7 +21,7 @@
         $result_last = mysqli_query($conn, $sql_last)or die('Error');
         if(mysqli_num_rows($result_last)>0){
           while($data = mysqli_fetch_assoc($result_last)){
-            $log_id= $data['log_id'];
+            $log_id= $data['l_log_id'];
             $log_id = $log_id + 1;
           }
         }
