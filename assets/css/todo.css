@@ -1,0 +1,15 @@
+.row3rds {
+  display: flex;
+}
+
+.column23{
+  flex: 66.67%;
+  margin: 10px 10px;
+  background: black;
+}
+
+.column13{
+  flex: 33.33%;
+  background: black;
+  margin: 10px 10px;
+}

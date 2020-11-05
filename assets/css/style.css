@@ -467,10 +467,50 @@ ul.breadcrumb li a:hover {
   }
 }
 
-.table.tkp-table .badge{
-      border-radius: 0;
+
+/* Float four columns side by side */
+.columncard {
+  float: left;
+  width: 20%;
+  padding: 20px 33px;
 }
-.table.tkp-table thead tr{
-  background-color: #32cafe;
-  color:#fff;
+
+.card2 h3{
+  text-align: left;
+  font-weight: 200;
+}
+
+.card2 p{
+  text-align: left;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.card2:hover{ position: relative; 
+             top: -5px;}
+/* Remove extra left and right margins, due to padding */
+.rowcard {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.rowcard:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .columncard {
+    width: 25%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
 }
