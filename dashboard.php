@@ -22,6 +22,7 @@
    ?>
 <!-- Write Code for Dashboard Content Dont Touch anything else -->
   <div class="content">
+    <?php if($_SESSION['role_status']==0){ ?>
     <div class="rowcard">
       <div class="columncard">
         <div class="card2" style="background: #28d094; color:white;">
@@ -51,6 +52,7 @@
         </div>
       </div>
     </div>
+  <?php } ?>
     <!-- <div class="card"> -->
       <div class="row3rds">
         <div class="column23">
@@ -108,79 +110,36 @@
              <h3>Todo List</h3>
           </div>
           <div class="card-content">
-            <!-- <div id="myDIV" class="header">
-              <input type="text" id="myInput" placeholder="Title...">
-              <span onclick="newElement()" class="addBtn">Add</span>
-            </div>
+            <form action="action_add_todos.php" method="post">
+              <input id="myTodo" type="text" name="content" class="form-control"  placeholder="Add Todo..">
+              <input id="myId" type="hidden" name="myId" class="form-control" value="<?php echo $_SESSION['userId'];?>">
+              <input type="submit" name="todo_add" id="todo" class="add_button" value="ADD TODO" style="float:right; width:100%; margin-bottom: 20px;">
+            </form>
+            <?php
+            $role_status = $_SESSION['role_status'];
+            $sql2 = "SELECT todolist.*, users.* FROM todolist LEFT JOIN users ON todolist.idUsers=users.idUsers WHERE todolist.Status='Active' AND users.role_status='$role_status'";
+            $result2 = mysqli_query($conn, $sql2)or die('Error');
+            if(mysqli_num_rows($result2)>0){
+              $i=1;
+              while($todo = mysqli_fetch_assoc($result2)){
+                $role = $todo['role_status'];
+                $todo_id = $todo['todo_id'];
+                $idUsers = $todo['idUsers'];
+                $content = $todo['content'];
 
-            <ul id="myUL">
-              <li>Hit the gym</li>
-
-            </ul> -->
+                ?>
+                  <p style="color: white;"><?php echo $i." - ".$content; ?><span style="float: right;"><a href="action_delete_todos.php?id=<?php echo $todo_id; ?>" style="text-decoration: none; color: white;"><i class="fa fa-times"></i></a></span></p>
+                <?php
+                $i++;
+              }
+            }
+             ?>
           </div>
         </div>
       </div>
 
     <!-- </div> -->
   </div>
-  <!-- <script>
-  // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-var span = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-span.appendChild(txt);
-myNodelist[i].appendChild(span);
-}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-close[i].onclick = function() {
-  var div = this.parentElement;
-  div.style.display = "none";
-}
-}
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-if (ev.target.tagName === 'LI') {
-  ev.target.classList.toggle('checked');
-}
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-var li = document.createElement("li");
-var inputValue = document.getElementById("myInput").value;
-var t = document.createTextNode(inputValue);
-li.appendChild(t);
-if (inputValue === '') {
-  alert("You must write something!");
-} else {
-  document.getElementById("myUL").appendChild(li);
-}
-document.getElementById("myInput").value = "";
-
-var span = document.createElement("SPAN");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-console.log(inputValue);
-span.appendChild(txt);
-li.appendChild(span);
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-}
-  </script> -->
 <!-- Need to implement a todo list -->
   <?php
      require_once "foot.php"
