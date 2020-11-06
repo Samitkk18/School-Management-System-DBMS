@@ -14,7 +14,7 @@
           $subject_name = $_POST['subject_name'];
           $subject_code = $_POST['subject_code'];
           $year = $_POST['year'];
-               $sql = "INSERT INTO subject (subject_name, subject_code, course_name, year, Status) VALUES ('$subject_name', '$subject_code', '$course_name','$year', 'Active')";
+               $sql = "INSERT INTO subject (subject_name, subject_code, course_id, year, Status) VALUES ('$subject_name', '$subject_code', '$course_name','$year', 'Active')";
                   // echo $sql;
                   // exit();
 

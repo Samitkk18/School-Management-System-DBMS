@@ -49,7 +49,7 @@
            <tbody id="myTable">
              <?php
              $name_of = $_SESSION['userUid'];
-             $sql = "SELECT subject.*, course.*, years.* FROM subject LEFT JOIN course ON subject.course_name=course.course_id LEFT JOIN years ON subject.year=years.year_id WHERE subject.Status='Active';";
+             $sql = "SELECT subject.*, course.*, years.* FROM subject LEFT JOIN course ON subject.course_id=course.course_id LEFT JOIN years ON subject.year=years.year_id WHERE subject.Status='Active';";
               // $sql = "SELECT * FROM subject WHERE status = 'Active'";
               $result = mysqli_query($conn, $sql)or die('Error');
               if(mysqli_num_rows($result)>0){

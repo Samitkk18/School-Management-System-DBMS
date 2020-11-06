@@ -15,7 +15,7 @@
           $subject_name = $_POST['subject_name'];
           $subject_code = $_POST['subject_code'];
           $year = $_POST['year'];
-               $sql = "UPDATE subject SET course_name='$course_name', subject_name='$subject_name', subject_code='$subject_code' ,year='$year' WHERE subject_id='$id'";
+               $sql = "UPDATE subject SET course_id='$course_name', subject_name='$subject_name', subject_code='$subject_code' ,year='$year' WHERE subject_id='$id'";
                   // echo $sql;
                   // exit();
 
