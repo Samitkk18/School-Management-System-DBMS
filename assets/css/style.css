@@ -486,7 +486,7 @@ ul.breadcrumb li a:hover {
   font-size: 25px;
 }
 
-.card2:hover{ position: relative; 
+.card2:hover{ position: relative;
              top: -5px;}
 /* Remove extra left and right margins, due to padding */
 .rowcard {margin: 0 -5px;}
