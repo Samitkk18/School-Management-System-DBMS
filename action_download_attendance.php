@@ -66,4 +66,4 @@ $writer = new Xlsx($spreadsheet);
 // $writer->save($date.'-'.$course_name.'-'.$year.'.xlsx');
 header('Content-Type: application/vnd.ms-excel');
 header('Content-Disposition: attachment; filename="'.$date.'-'.$course_name.'-'.$year.'.xlsx"');
-// $writer->save("php://output");
+$writer->save("php://output");
