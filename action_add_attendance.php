@@ -25,14 +25,15 @@
             $log_id = $log_id + 1;
           }
         }
+        $sql2 = "INSERT INTO attendance_logs(course_id, year, teacher_id, subject_id, log_added_on) VALUES('$course', '$year', '$teacher', '$subject', '$added_on')";
+        $query2 = $conn->query($sql2);
         foreach($attendance as $data){
           $sql = "INSERT INTO attendance(log_id, course_id, year, teacher_id, subject_id, student_sapid, added_on) VALUES('$log_id', '$course', '$year', '$teacher', '$subject', '$data', '$added_on')";
           $query = $conn->query($sql);
           // echo $sql;
           // exit();
         }
-        $sql2 = "INSERT INTO attendance_logs(course_id, year, teacher_id, subject_id, log_added_on) VALUES('$course', '$year', '$teacher', '$subject', '$added_on')";
-        $query2 = $conn->query($sql2);
+
         if($query && $query2){
             header("Location: attendance.php");
         }

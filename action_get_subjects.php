@@ -5,7 +5,7 @@
     // echo $data;
     $course = $_POST['course'];
     $year = $_POST['year'];
-    $sql = "SELECT * FROM subject WHERE course_name='$course' AND year='$year'";
+    $sql = "SELECT * FROM subject WHERE course_id='$course' AND year='$year'";
     $result = mysqli_query($conn, $sql)or die('Error');
     // echo $sql;
     if(mysqli_num_rows($result)>0){

@@ -114,7 +114,7 @@
              <select name="subject" class="form-control" id="subject_tag" required>
                <option>Select a Subject</option>
                <?php
-                  $sql = "SELECT * FROM subject WHERE course_name='$course_n' AND year='$year_n'";
+                  $sql = "SELECT * FROM subject WHERE course_id='$course_n' AND year='$year_n'";
                   $result = mysqli_query($conn, $sql)or die('Error');
                   if(mysqli_num_rows($result)>0){
                     while($subject = mysqli_fetch_assoc($result)){
@@ -125,13 +125,12 @@
                         echo "<option value=".$subject_id." selected=".$selected.">$subject_name</option>";
                       }
                       else{
-                        echo "<option value=".$year_id.">$year_name</option>";
+                        echo "<option value=".$subject_id.">$subject_name</option>";
                       }
                     }
                   }
                 ?>
              </select>
-             <!-- <input type="text" name="subject" class="form-control" value="<?php echo $a_subject; ?>" placeholder="Select Subject"> -->
            </div>
            <div class="column2">
              <label for="date_of_sub" class="label">Date of Submission:</label><br>
