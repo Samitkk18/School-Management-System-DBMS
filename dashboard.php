@@ -2,9 +2,9 @@
   require_once "session.php";
   require 'includes/dbh.inc.php';
 ?>
-<?php if(!$_SESSION['userId']): ?>
+<!-- <?php if(!$_SESSION['userId']): ?>
    <?php header("Location: index.php") ?>
-<?php else: ?>
+<?php else: ?> -->
   <?php
        require_once "head.php"
   ?>
@@ -240,4 +240,4 @@
   <?php
      require_once "foot.php"
   ?>
-<?php endif; ?>
+<!-- <?php endif; ?> -->
